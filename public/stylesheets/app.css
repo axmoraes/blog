@@ -15,7 +15,6 @@ i.icon {
 }
 body{
     background-image: linear-gradient(to right, #7981b7, #7c88c0, #7e8fc9, #8197d2, #839edb, #7da9e5, #77b3ed, #71bef4, #67cdf8, #68dcf8, #74eaf4, #89f6ef);    padding-top: 35px;
-    margin-bottom: 10px;
 }
 
 #delete{
@@ -41,12 +40,15 @@ img{
 }
 
 #footer{
+    margin-bottom: 0 !important;
     color: white;
-    margin-bottom: 0;
     font-size: 15px;
     height: 20px;
     background-color: #3527B3;
     text-align: center;
+    position: relative;
+
+    width: 100%;
 }
 
 h2{
@@ -68,4 +70,124 @@ h2{
 
 #showContainer{
     margin: 2% 0;
+}
+
+/* ===========  new post page  ===============*/
+
+.box{
+	border-radius: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    width: 450px;
+    height: 550px;
+	background: #fff;
+	padding: 40px;
+	box-sizing: border-box;
+	border: 1px solid rgba(0,0,0,.1);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+}
+
+@media (max-width:500px){
+    .box{
+        margin: 50px 0 30px 0;
+        width: 93%;
+    }
+}
+
+@media (min-width:700px){
+    .box{
+        width: 60%;
+    }
+}
+
+@media (min-width:900px){
+    .box{
+        width: 50%;
+    }
+}
+
+@media (min-width:1100px){
+    .box{
+        width: 40%;
+    }
+}
+
+.box h2{
+	margin: 0 0 20px;
+	padding-bottom: 30px;
+    color: rgb(61, 4, 99);
+	text-transform: uppercase;
+}
+
+.box input{
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+
+.box textarea{
+	height: 220px;
+	padding: 10px 0;
+	margin-bottom: 40px;
+}
+
+.box input,
+.box textarea{
+	width: 100%;
+	box-sizing: border-box;
+	box-shadow: none;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid rgb(61, 4, 99);
+}
+
+.box textarea{
+	margin-bottom: 20px;
+}
+
+.box input[type="submit"]{
+	border-bottom: none;
+	cursor: pointer;
+	color: #e9e9e9;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 2px;
+	border-radius: 8px;
+}
+
+.box form div{
+	position: relative;
+}
+
+.box form div label{
+    font-size: 50px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+    color: rgb(61, 4, 99);
+	transition: .5s;
+	pointer-events: none;
+}
+
+.box input:focus ~ label,
+.box textarea:focus ~ label,
+.box input:valid ~ label,
+.box textarea:valid ~ label{
+	top: -12px;
+	left: 0;
+    color: rgb(61, 4, 99);
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.box input:focus,
+.box textarea:focus,
+.box input:valid,
+.box textarea:valid{
+	border-bottom: 2px solid;
+
 }
