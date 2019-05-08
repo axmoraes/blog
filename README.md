@@ -9,13 +9,13 @@ if you do, skip direct to the dependencies:
 
 sudo npm i body-parser express express-sanitizer method-override mongoose
 
-onde you have it all, install MongoDB following this tutorial:
+once you have it all, install MongoDB following this tutorial:
 
 https://docs.mongodb.com/manual/administration/install-community/
 
 Then, start mongo in your terminal, just type 'mongo'
 
-open the another terminal in the repository folder and run the server:
+open another terminal in the repository folder and run the server:
 
 node app.js
 
