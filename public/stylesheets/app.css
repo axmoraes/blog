@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+}
+
+i.icon {
+    font-size: 1.2em;
+}
+
+.container.main {
+    margin-top: 2.0em;
+}
+body{
+    font-family: 'Ubuntu', 'sans-serif';
+    padding-top: 35px;
+    margin-bottom: 10px;
+}
+
+#delete{
+    display: inline;
+}
+
+img{
+    border-radius: 8px;
+    margin-bottom: 3px;
+}
+
+#imageBlock{
+    padding-bottom: 50px;
+}
+#blogText{
+    padding: 3% 0;
+    text-align: justify;
+}
+
+.content{
+    text-align: right !important;
+}
+
+#footer{
+    color: grey;
+    margin-bottom: 0;
+    font-size: 15px;
+    height: 25px;
+    background-color: lightgrey;
+    text-align: center;
+}
