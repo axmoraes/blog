@@ -13,6 +13,10 @@ once you have it all, install MongoDB following this tutorial:
 
 https://docs.mongodb.com/manual/administration/install-community/
 
+Start mongod server:
+
+sudo service mongod start 
+
 Then, start mongo in your terminal, just type 'mongo'
 
 open another terminal in the repository folder and run the server:
