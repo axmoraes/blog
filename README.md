@@ -7,7 +7,7 @@ sudo apt-get install npm
 
 if you do, skip direct to the dependencies:
 
-sudo npm i body-parser express express-sanitizer method-override mongoose
+sudo npm i body-parser express express-sanitizer method-override mongoose ejs
 
 once you have it all, install MongoDB following this tutorial:
 
