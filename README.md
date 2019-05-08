@@ -29,6 +29,7 @@ and it will open the blog.
 
 It's ready to play with, change the colors, the posts and any config you'd like.
 
+The application will generate 2 posts examples, which you can edit or delete at your will, but every time you restart the server, it will come as default again.
 
 
 
