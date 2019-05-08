@@ -1,10 +1,10 @@
 {
   "name": "restfullblogapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple Blog app to play with",
   "main": "app.js",
   "scripts": {
-    "start": "Node started",
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "author": "Alex",
