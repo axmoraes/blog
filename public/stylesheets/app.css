@@ -1,5 +1,9 @@
 h1{
     text-align: center;
+    color: #122C8B;
+    font-size: 50px;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 1px 1px 1px rgb(18, 139, 139);
 }
 
 i.icon {
@@ -10,8 +14,7 @@ i.icon {
     margin-top: 2.0em;
 }
 body{
-    font-family: 'Ubuntu', 'sans-serif';
-    padding-top: 35px;
+    background-image: linear-gradient(to right, #7981b7, #7c88c0, #7e8fc9, #8197d2, #839edb, #7da9e5, #77b3ed, #71bef4, #67cdf8, #68dcf8, #74eaf4, #89f6ef);    padding-top: 35px;
     margin-bottom: 10px;
 }
 
@@ -20,6 +23,7 @@ body{
 }
 
 img{
+    box-shadow: 5px 5px 5px grey;
     border-radius: 8px;
     margin-bottom: 3px;
 }
@@ -37,10 +41,31 @@ img{
 }
 
 #footer{
-    color: grey;
+    color: white;
     margin-bottom: 0;
     font-size: 15px;
-    height: 25px;
-    background-color: lightgrey;
+    height: 20px;
+    background-color: #3527B3;
     text-align: center;
+}
+
+h2{
+    color: rgb(37, 53, 88);
+    font-family: 'Cinzel', serif;
+}
+
+#h2Show{
+    text-align: center;
+}
+
+.pageContent{
+    color: rgb(61, 4, 99);
+}
+
+#readMore{
+    color: #122C8B;
+}
+
+#showContainer{
+    margin: 2% 0;
 }

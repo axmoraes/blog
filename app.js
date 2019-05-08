@@ -8,7 +8,7 @@ var bodyParser          = require("body-parser"),
     seedDB              = require("./seeds");
     
 // APP CONFIG
-mongoose.connect("mongodb://localhost/restful_blog_app", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));

@@ -6,9 +6,9 @@ var mongoose    = require("mongoose"),
 
 var examplePost = [
     {
-        title: "Post Example",
+        title: "Example Post",
         image: "https://s3.amazonaws.com/uploads.hotmart.com/blog/2016/01/post_url_940x6062-670x432.png",
-        body: "This is an example of a blog post. Click on 'New post' to add your first blog post. Insert a title, then a url of an image, a content and next click on Submit. And your post is done!",
+        body: "This is a simple example of a blog post. Click on 'New post' and start producing yours. Insert a title, then a url of an image, a content and next click on Submit. And, CONGRATULATIONS!!! Your post is done!",
         created: "Tue Apr 23 2019"
     },
     {
