@@ -4,7 +4,7 @@ var bodyParser          = require("body-parser"),
     mongoose            = require("mongoose"),
     express             = require("express"),
     app                 = express(),
-    Blog                = require("./models/posts"),
+    Blog                = require("./models/posts");
     //seedDB              = require("./seeds");
     
 //const mongoURL = "mongodb://localhost/blog_app";
