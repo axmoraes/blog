@@ -8,7 +8,7 @@ var bodyParser          = require("body-parser"),
     seedDB              = require("./seeds");
     
 //const mongoURL = "mongodb://localhost/blog_app";
-const mongoURL = process.env.DATABASEURL
+const mongoURL = process.env.DATABASEURL;
 
 // APP CONFIG
 mongoose.connect(mongoURL);
