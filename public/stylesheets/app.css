@@ -75,10 +75,10 @@ h2{
 /* ===========  new post page  ===============*/
 
 .box{
-	border-radius: 15px;
+	border-radius: 0 85px;
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 80%;
+	left: 80%;
 	transform: translate(-50%, -50%);
     width: 450px;
     height: 550px;
