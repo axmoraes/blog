@@ -7,8 +7,8 @@ var bodyParser          = require("body-parser"),
     Blog                = require("./models/posts"),
     seedDB              = require("./seeds");
     
-//const mongoURL = "mongodb://localhost/blog_app";
-const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
+const mongoURL = "mongodb://localhost/blog_app";
+//const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
 
 // APP CONFIG
 mongoose.connect(mongoURL, { useNewUrlParser: true });
@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
-//seedDB();
+seedDB();
 
 // RESTfull ROUTES
 
@@ -105,5 +105,5 @@ app.delete("/blogs/:id", (req, res) => {
       
 } );
 
-app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
-// app.listen(3000, () => console.log(`Server started on port 3000`));
+//app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
+app.listen(3000, () => console.log(`Server started on port 3000`));

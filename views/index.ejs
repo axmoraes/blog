@@ -4,12 +4,11 @@
     <% blogs.forEach(function(blog){ %>
         <div id = "imageBlock" class = "container">
             <h2><%= blog.title %></h2>
-            <img  width="60%" src="<%= blog.image %>" >
+            <a href="/blogs/<%= blog._id %>"> <img   width="60%" src="<%= blog.image %>" ></a>
             <p>
             <span><strong><%= blog.created.toDateString() %></strong></span>
             </p>
             <p><%= blog.body.substring(0, 100) %>...</p>
-            <a id="readMore" href="/blogs/<%= blog._id %>">Read More...</a>
         </div>
     <% }) %>
 </div>
