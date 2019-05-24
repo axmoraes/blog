@@ -8,10 +8,10 @@ var bodyParser          = require("body-parser"),
     seedDB              = require("./seeds");
     
 //const mongoURL = "mongodb://localhost/blog_app";
-const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
+const mongoURL = process.env.DATABASEURL
 
 // APP CONFIG
-mongoose.connect(mongoURL, { useNewUrlParser: true });
+mongoose.connect(mongoURL);
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
