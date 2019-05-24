@@ -7,9 +7,11 @@ var bodyParser          = require("body-parser"),
     Blog                = require("./models/posts"),
     seedDB              = require("./seeds");
     
+//const mongoURL = "mongodb://localhost/blog_app";
+const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
+
 // APP CONFIG
-mongoose.connect("mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog", { useNewUrlParser: true });
-//mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true });
+mongoose.connect(mongoURL, { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -103,11 +105,16 @@ app.delete("/blogs/:id", (req, res) => {
       
 } );
 
+//let processPort = 3000;
+let processPort = process.env.PORT, process.env.IP;
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(processPort, function(){
     console.log("Server is ON");
 });
 
-// const port = 3000;
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Server is ON");
+// });
 
+// const port = 3000;
 // app.listen(port, () => console.log(`Server started on port ${port}`));

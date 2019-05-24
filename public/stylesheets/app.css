@@ -77,8 +77,8 @@ h2{
 .box{
 	border-radius: 0 85px;
 	position: absolute;
-	top: 80%;
-	left: 80%;
+	top: 51%;
+	left: 50%;
 	transform: translate(-50%, -50%);
     width: 450px;
     height: 550px;
