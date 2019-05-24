@@ -105,16 +105,5 @@ app.delete("/blogs/:id", (req, res) => {
       
 } );
 
-//let processPort = 3000;
-let processPort = process.env.PORT, process.env.IP;
-
-app.listen(processPort, function(){
-    console.log("Server is ON");
-});
-
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("Server is ON");
-// });
-
-// const port = 3000;
-// app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
+// app.listen(3000, () => console.log(`Server started on port 3000`));
