@@ -8,7 +8,8 @@ var bodyParser          = require("body-parser"),
     seedDB              = require("./seeds");
     
 // APP CONFIG
-mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true });
+mongoose.connect("mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/blog_app", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
