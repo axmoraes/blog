@@ -77,11 +77,11 @@ h2{
 .box{
 	border-radius: 0 85px;
 	position: absolute;
-	top: 51%;
+	top: 55%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -45%);
     width: 450px;
-    height: 550px;
+    height: auto;
 	background: #fff;
 	padding: 40px;
 	box-sizing: border-box;
@@ -164,11 +164,11 @@ h2{
 }
 
 .box form div label{
-    font-size: 50px;
+    font-size: 17px;
 	position: absolute;
 	top: 10px;
 	left: 0;
-    color: rgb(61, 4, 99);
+    color: rgb(108, 37, 155);
 	transition: .5s;
 	pointer-events: none;
 }

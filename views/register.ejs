@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+<h1>Register</h1>
+
+<div class="box">
+    <form action="/register" method="POST">
+        <div>
+            <input type="text" name="blog[firstName]" required>
+            <label>First Name</label>
+        </div>
+        <div>
+            <input type="text" name="blog[lastName]" required>
+            <label>Last Name</label>
+        </div>
+        <div>
+            <input type="email" name="blog[email]" required>
+            <label>E-mail Address</label>
+        </div>
+        <div>
+            <input type="text" name="blog[userName]" required>
+            <label>Username</label>
+        </div>
+        <div>
+            <input type="password" name="blog[password]" required>
+            <label>Password</label>
+        </div>
+        <input class="ui violet button" type="submit">
+    </form>
+</div>
+
+<% include ./partials/footer %>

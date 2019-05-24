@@ -43,7 +43,8 @@ app.get("/blogs/new", (req, res) => {
             //CREATE ROUTE
 app.post("/blogs", (req, res) => {
     req.body.blog.body = req.sanitize(req.body.blog.body)
-            // CREATE BLOG
+            
+    // CREATE BLOG
    Blog.create(req.body.blog, function(err, newBlog){
        if(err){
            res.render("new");
@@ -53,6 +54,18 @@ app.post("/blogs", (req, res) => {
        }
    });
 });
+
+//show register form
+app.get("/register", function(req, res) {
+    res.render("register");
+});
+
+
+ //SHOW login form
+ app.get("/login", function(req, res) {
+    res.render("login");
+});
+
             //SHOW ROUTE
     
 app.get("/blogs/:id", (req, res) => {
