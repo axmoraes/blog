@@ -191,3 +191,9 @@ h2{
 	border-bottom: 2px solid;
 
 }
+
+/* =================================== */
+
+#register{
+    justify-content: end;
+}
