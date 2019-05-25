@@ -1,122 +1,64 @@
-var bodyParser          = require("body-parser"),
+var express             = require("express"),
+    app                 = express(),
+    bodyParser          = require("body-parser"),
+    mongoose            = require("mongoose"),
+    flash               = require("connect-flash"),
+    passport            = require("passport"),
+    LocalStrategy       = require("passport-local"),
     methodOverride      = require("method-override"),
     expressSanitizer    = require("express-sanitizer"),
-    mongoose            = require("mongoose"),
-    express             = require("express"),
-    app                 = express(),
     Blog                = require("./models/posts"),
+    User                = require("./models/user");
     seedDB              = require("./seeds");
     
+    //Requiring routes
+var postRoutes = require("./routes/posts"),
+    indexRoutes = require("./routes/index");
+
+
+    //Config MongoDB
 //const mongoURL = "mongodb://localhost/blog_app";
 const mongoURL = process.env.DATABASEURL;
 
+<<<<<<< HEAD
 // APP CONFIG
 mongoose.connect(mongoURL);
+=======
+mongoose.connect(mongoURL, { useNewUrlParser: true });
+
+    // APP CONFIG
+app.use(bodyParser.urlencoded({extended: true}));
+>>>>>>> register
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
-seedDB();
+app.use(flash());
+//seedDB();
 
-// RESTfull ROUTES
+    //PASSPORT CONFIG
+app.use(require("express-session")({
+    secret: "super secret",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-app.get("/", function(req, res) {
-    res.redirect("/blogs");
-});
-
-// INDEX ROUTE
-app.get("/blogs", (req, res) => {
-    Blog.find({}, function(err, blogs){
-        if(err){
-            console.log("ERROR!");
-        } else {
-            res.render("index", {blogs: blogs});
-        }
-    });
-});
-
-            //NEW ROUTE
-app.get("/blogs/new", (req, res) => {
-    res.render("new");
-});
-            //CREATE ROUTE
-app.post("/blogs", (req, res) => {
-    req.body.blog.body = req.sanitize(req.body.blog.body)
-            
-    // CREATE BLOG
-   Blog.create(req.body.blog, function(err, newBlog){
-       if(err){
-           res.render("new");
-       } else {
-           //THEN, REDIRECT TO THE INDEX
-           res.redirect("/blogs");
-       }
-   });
-});
-
-//show register form
-app.get("/register", function(req, res) {
-    res.render("register");
+app.use(function(req, res, next){
+    res.locals.currentUser  = req.user;
+    res.locals.error        = req.flash("error");
+    res.locals.success      = req.flash("success");
+    next();
 });
 
 
- //SHOW login form
- app.get("/login", function(req, res) {
-    res.render("login");
-});
+app.use(indexRoutes);
+app.use(postRoutes);
 
-            //SHOW ROUTE
-    
-app.get("/blogs/:id", (req, res) => {
-    Blog.findById(req.params.id, function(err, foundBlog){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            res.render("show", {blog: foundBlog});
-        }
-    });
-});
-   
-            //EDIT ROUTE
-            
-app.get("/blogs/:id/edit", (req, res) => {
-    Blog.findById(req.params.id, function(err, foundBlog){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            res.render("edit", {blog: foundBlog});
-        }
-    });
-});            
 
-            //UPDATE ROUTE
-            
-app.put("/blogs/:id", (req, res) => {
-    req.body.blog.body = req.sanitize(req.body.blog.body)
-    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
-        if(err){
-            res.redirect("blogs");
-        } else {
-            res.redirect("/blogs/" + req.params.id);
-        }
-    });
-});
-
-            //DELETE ROUTE
-    
-app.delete("/blogs/:id", (req, res) => {
-    //DESTROY BLOG
-    Blog.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            res.redirect("/blogs");
-        }
-            
-    });
-      
-} );
-
-app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
-//app.listen(3000, () => console.log(`Server started on port 3000`));
+//app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
+app.listen(3000, () => console.log(`Server started on port 3000`));

@@ -194,6 +194,19 @@ h2{
 
 /* =================================== */
 
-#register{
+/* #register{
     justify-content: end;
+} */
+
+.alert{
+    text-align: center;
 }
+
+#message{
+    opacity:1;
+    transition:opacity 500ms;
+}
+#message.fade{
+    opacity: 0;
+}
+

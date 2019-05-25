@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<h1>B l o g &ensp;H o m e &ensp;P a g e</h1>
+
+<div class="pageContent">
+    <% blogs.forEach(function(blog){ %>
+        <div id = "imageBlock" class = "container">
+            <h2><%= blog.title %></h2>
+            <a href="/blogs/<%= blog._id %>"> <img   width="60%" src="<%= blog.image %>" ></a>
+            <p>
+            <span><strong><%= blog.created.toDateString() %></strong></span>
+            </p>
+            <p><%= blog.body.substring(0, 100) %>...</p>
+        </div>
+    <% }) %>
+</div>
+
+<% include ../partials/footer %>
