@@ -58,7 +58,7 @@ router.put("/blogs/:id", (req, res) => {
 });
 
         //DELETE ROUTE    
-router.delete("/blogs/:id", (req, res) => {
+router.delete("/blogs/:id", isLoggedIn, (req, res) => {
         //DESTROY BLOG
     Blog.findByIdAndDelete(req.params.id, function(err){
         if(err){
