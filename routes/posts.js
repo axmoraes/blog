@@ -3,7 +3,7 @@ var express     = require("express"),
     Blog        = require("../models/posts"),
     middleware  = require("../middleware");
 
-var {isLoggedIn} = middleware;
+var {isLoggedIn, checkUserBlog} = middleware;
 
         //NEW route
 router.get("/blogs/new", isLoggedIn, (req, res) => res.render("posts/new"));
@@ -17,7 +17,8 @@ router.post("/blogs", (req, res) => {
            res.render("posts/new");
        } else {
         //THEN, REDIRECT TO THE INDEX
-           res.redirect("/blogs");
+            req.flash("success", "Congratulations! Your post was added");
+            res.redirect("/blogs");
        }
    });
 });
@@ -34,7 +35,7 @@ router.get("/blogs/:id", (req, res) => {
 });
    
         //EDIT ROUTE 
-router.get("/blogs/:id/edit", (req, res) => {
+router.get("/blogs/:id/edit", isLoggedIn, (req, res) => {
     Blog.findById(req.params.id, function(err, foundBlog){
         if(err){
             res.redirect("/blogs");

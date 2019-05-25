@@ -29,7 +29,7 @@ app.use(express.static("public"));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 app.use(flash());
-seedDB();
+//seedDB();
 
     //PASSPORT CONFIG
 app.use(require("express-session")({
