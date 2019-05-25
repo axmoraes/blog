@@ -1,27 +1,27 @@
 <% include ./partials/header %>
 
-<h1>Register</h1>
+<h1>R e g i s t e r</h1>
 
 <div class="box">
     <form action="/register" method="POST">
         <div>
-            <input type="text" name="blog[firstName]" required>
+            <input type="text" name="firstName" required>
             <label>First Name</label>
         </div>
         <div>
-            <input type="text" name="blog[lastName]" required>
+            <input type="text" name="lastName" required>
             <label>Last Name</label>
         </div>
         <div>
-            <input type="email" name="blog[email]" required>
+            <input type="email" name="email" required>
             <label>E-mail Address</label>
         </div>
         <div>
-            <input type="text" name="blog[userName]" required>
+            <input type="text" name="username" required>
             <label>Username</label>
         </div>
         <div>
-            <input type="password" name="blog[password]" required>
+            <input type="password" name="password" required>
             <label>Password</label>
         </div>
         <input class="ui violet button" type="submit">
