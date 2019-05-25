@@ -17,8 +17,14 @@
                 <div class="header item"><i class="desktop icon"></i></I>Blog</div>
                 <a href="/" class="item">Home</a>
                 <a href="/blogs/new" class="item">New post</a>
-                <a href="/login" class="item ml-auto">Login</a>
-                <a href="/register" class="item" >Register</a>
+                <% if(!currentUser){ %>
+                    <a href="/login" class="item ml-auto">Login</a>
+                    <a href="/register" class="item" >Register</a>
+                <% } else { %>
+                    <a href="#" class="item ml-auto">Signed in as <%= currentUser.firstName %></a>
+                    <a href="/logout" class="item">Logout</a>
+                <% } %>
             </div>
         </div>
-
+        <h3><%= error %></h3>
+        <h3><%= success %></h3>

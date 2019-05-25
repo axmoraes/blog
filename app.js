@@ -17,8 +17,8 @@ var postRoutes = require("./routes/posts"),
 
 
     //Config MongoDB
-const mongoURL = "mongodb://localhost/blog_app";
-//const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
+//const mongoURL = "mongodb://localhost/blog_app";
+const mongoURL = "mongodb://alex:Password123@ds027748.mlab.com:27748/simplesblog"
 
 mongoose.connect(mongoURL, { useNewUrlParser: true });
 

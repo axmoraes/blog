@@ -1,9 +1,12 @@
 var express     = require("express"),
     router      = express.Router(),
-    Blog        = require("../models/posts");
+    Blog        = require("../models/posts"),
+    middleware  = require("../middleware");
+
+var {isLoggedIn} = middleware;
 
         //NEW route
-router.get("/blogs/new", (req, res) => res.render("posts/new"));
+router.get("/blogs/new", isLoggedIn, (req, res) => res.render("posts/new"));
 
         //CREATE route
 router.post("/blogs", (req, res) => {
@@ -44,7 +47,7 @@ router.get("/blogs/:id/edit", (req, res) => {
         //UPDATE ROUTE            
 router.put("/blogs/:id", (req, res) => {
     req.body.blog.body = req.sanitize(req.body.blog.body)
-    Blog.findOneAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
         if(err){
             res.redirect("blogs");
         } else {
@@ -56,7 +59,7 @@ router.put("/blogs/:id", (req, res) => {
         //DELETE ROUTE    
 router.delete("/blogs/:id", (req, res) => {
         //DESTROY BLOG
-    Blog.findOneAndDelete(req.params.id, function(err){
+    Blog.findByIdAndDelete(req.params.id, function(err){
         if(err){
             res.redirect("/blogs");
         } else {

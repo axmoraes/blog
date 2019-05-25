@@ -21,15 +21,20 @@ router.get("/blogs", (req, res) => {
 router.get("/register", (req,res) => res.render("register"));
 
 //Sign up logic
-router.post("/register", function(req,res){
-    let newUser = new User ({username: req.body.username});
+router.post("/register", (req,res) => {
+    let newUser = new User ({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        username: req.body.username
+    });
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             req.flash("error", err.message)
             return res.render("register");
         }
         passport.authenticate("local")(req,res, function(){
-            req.flash("success", "Welcome to SimplesBlog " + user.username);
+            req.flash("success", "You are now registered! Welcome " + user.firstName);
             res.redirect("/blogs")
         });
     });
@@ -50,7 +55,7 @@ router.post("/register", function(req,res){
  // Logout logic
  router.get("/logout", function(req, res) {
     req.logout();
-    req.flash("success", "Logged you out");
+    req.flash("success", "You logged out with success!");
     res.redirect("/blogs");
 });
 
