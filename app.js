@@ -20,15 +20,11 @@ var postRoutes = require("./routes/posts"),
 //const mongoURL = "mongodb://localhost/blog_app";
 const mongoURL = process.env.DATABASEURL;
 
-<<<<<<< HEAD
 // APP CONFIG
 mongoose.connect(mongoURL);
-=======
-mongoose.connect(mongoURL, { useNewUrlParser: true });
 
     // APP CONFIG
 app.use(bodyParser.urlencoded({extended: true}));
->>>>>>> register
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(expressSanitizer());
