@@ -60,5 +60,5 @@ app.use(indexRoutes);
 app.use(postRoutes);
 
 
-//app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
-app.listen(3000, () => console.log(`Server started on port 3000`));
+app.listen(process.env.PORT, process.env.IP, () => console.log("Server is ON"));
+//app.listen(3000, () => console.log(`Server started on port 3000`));
