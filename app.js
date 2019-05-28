@@ -17,11 +17,11 @@ var postRoutes = require("./routes/posts"),
 
 
     //Config MongoDB
-//const mongoURL = "mongodb://localhost/blog_app";
-const mongoURL = process.env.DATABASEURL;
+const databaseUri = process.env.DATABASEURL || "mongodb://localhost/blog_app";
 
-// APP CONFIG
-mongoose.connect(mongoURL);
+mongoose.connect(databaseUri, { useNewUrlParser: true })
+      .then(() => console.log(`Database connected`))
+      .catch(err => console.log(`Database connection error: ${err.message}`));
 
     // APP CONFIG
 app.use(bodyParser.urlencoded({extended: true}));

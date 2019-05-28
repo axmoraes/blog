@@ -25,6 +25,7 @@ img{
     box-shadow: 5px 5px 5px grey;
     border-radius: 8px;
     margin-bottom: 3px;
+    width: 60%;
 }
 
 #imageBlock{
@@ -37,18 +38,6 @@ img{
 
 .content{
     text-align: right !important;
-}
-
-#footer{
-    margin-bottom: 0 !important;
-    color: white;
-    font-size: 15px;
-    height: 20px;
-    background-color: #3527B3;
-    text-align: center;
-    position: relative;
-
-    width: 100%;
 }
 
 h2{
@@ -70,6 +59,10 @@ h2{
 
 #showContainer{
     margin: 2% 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(235, 225, 225);
 }
 
 /* ===========  new post page  ===============*/
@@ -194,19 +187,6 @@ h2{
 
 /* =================================== */
 
-/* #register{
-    justify-content: end;
-} */
-
 .alert{
     text-align: center;
 }
-
-#message{
-    opacity:1;
-    transition:opacity 500ms;
-}
-#message.fade{
-    opacity: 0;
-}
-

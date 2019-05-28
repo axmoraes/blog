@@ -49,7 +49,8 @@ router.post("/register", (req,res) => {
  router.post("/login", passport.authenticate("local", 
  {
      successRedirect: "/blogs",
-     failureRedirect: "/login"
+     failureRedirect: "/login",
+     failureFlash: "Username or Password incorrect"
  }));
 
  // Logout logic

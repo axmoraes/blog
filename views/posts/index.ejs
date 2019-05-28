@@ -1,12 +1,13 @@
 <% include ../partials/header %>
 
-<h1>B l o g &ensp;H o m e &ensp;P a g e</h1>
+<h1 class="d-none d-sm-block">B l o g &ensp;H o m e &ensp;P a g e</h1>
+<h1 class="d-block d-sm-none">B l o g &ensp;H o m e <br> P a g e</h1>
 
 <div class="pageContent">
     <% blogs.forEach(function(blog){ %>
         <div id = "imageBlock" class = "container">
             <h2><%= blog.title %></h2>
-            <a href="/blogs/<%= blog._id %>"> <img   width="60%" src="<%= blog.image %>" ></a>
+            <a href="/blogs/<%= blog._id %>"> <img src="<%= blog.image %>" ></a>
             <p>
             <span><strong><%= blog.created.toDateString() %></strong></span>
             </p>
