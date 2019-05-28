@@ -1,10 +1,14 @@
-h1{
-    margin-top: 4%;
+h1{    
+    margin-top: 1px !important;
     text-align: center;
     color: #122C8B;
     font-size: 50px;
     font-family: 'Amatic SC', cursive;
     text-shadow: 1px 1px 1px rgb(18, 139, 139);
+}
+
+.navbar{
+    padding: 3px 14px 3px 20px !important; 
 }
 
 i.icon {
@@ -15,7 +19,8 @@ i.icon {
     margin-top: 2.0em;
 }
 body{
-    background-image: linear-gradient(to right, #7981b7, #7c88c0, #7e8fc9, #8197d2, #839edb, #7da9e5, #77b3ed, #71bef4, #67cdf8, #68dcf8, #74eaf4, #89f6ef);    padding-top: 35px;
+    background-image: linear-gradient(to right, #7981b7, #7c88c0, #7e8fc9, #8197d2, #839edb, #7da9e5, #77b3ed, #71bef4, #67cdf8, #68dcf8, #74eaf4, #89f6ef);
+    padding-top: 50px;
 }
 
 #delete{
@@ -45,9 +50,10 @@ ul{
     list-style: none;
 }
 
-#home{
+.home{
     width: 35px;
     box-shadow: 0 0 0;
+    padding-left: 1px;
 }
 
 h2{
@@ -76,7 +82,8 @@ h2{
 }
 
 .alert{
-    margin: 35px;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
 }
 
 /* ===========  new post page  ===============*/

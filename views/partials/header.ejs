@@ -14,7 +14,7 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #3527B3">
                 <a class="navbar-brand d-block d-md-none" href="/">
-                    <img id="home" src="/images/logo.png"></img>
+                    <img class="home" src="/images/logo.png"></img>
                 </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="toggler" class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-sm-4 d-none d-md-block" style="text-align: center">
                 <a href="/">
-                    <img id="home" src="/images/logo.png"></img>
+                    <img class="home" src="/images/logo.png"></img>
                 </a>
             </div>
             <div  class="collapse navbar-collapse justify-content-end col-sm-4" id="navCollapse">
@@ -45,10 +45,10 @@
                         </li>
                     <% } else { %>
                         <li>
-                            <a class="nav-link navLinks" href="#">Signed in as <%= currentUser.firstName %></a>
+                            <a class="nav-link navLinks" href="#"><strong>Signed in as <%= currentUser.firstName %></strong></a>
                         </li>
                         <li>
-                            <a class="nav-link navLinks" href="/logout">Logout</a>     
+                            <a class="nav-link navLinks" href="/logout"><strong>Logout</strong></a>     
                         </li>
                     <% } %>                   
                 </ul>
