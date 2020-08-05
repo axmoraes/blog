@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
         <link rel="stylesheet" type="text/css" href = "/stylesheets/app.css">
-        <link href="https://fonts.googleapis.com/css?family=Oxygen|Ubuntu|Amatic+SC|Cinzel" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen%7CUbuntu%7CAmatic+SC%7CCinzel" rel="stylesheet">
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MRS8N6W');</script>
         <!-- End Google Tag Manager -->
@@ -19,12 +20,12 @@
         <!-- End Google Tag Manager (noscript) -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #3527B3">
                 <a class="navbar-brand d-block d-md-none" href="/">
-                    <img class="home" src="/images/logo.png"></img>
+                    <img class="home" src="/images/logo.png" alt="logo">
                 </a>
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="toggler" class="navbar-toggler-icon"></span>
             </button>
-            <div  class="collapse navbar-collapse justify-content-start col-sm-4" id="navCollapse">
+            <div  class="navCollapse collapse navbar-collapse justify-content-start col-sm-4">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link navLinks" href="/"><strong>Home</strong></a>
@@ -36,10 +37,10 @@
             </div>
             <div class="col-sm-4 d-none d-md-block" style="text-align: center">
                 <a href="/">
-                    <img class="home" src="/images/logo.png"></img>
+                    <img class="home" src="/images/logo.png" alt="logo"></img>
                 </a>
             </div>
-            <div  class="collapse navbar-collapse justify-content-end col-sm-4" id="navCollapse">
+            <div  class="navCollapse collapse navbar-collapse justify-content-end col-sm-4">
                 <ul class="navbar-nav ml-auto">
                     <% if(!currentUser){ %>
                         <li class="nav-item">

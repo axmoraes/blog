@@ -5,9 +5,9 @@
 
 <div class="pageContent">
     <% blogs.forEach(function(blog){ %>
-        <div id = "imageBlock" class = "container">
+        <div class = "container imageBlock">
             <h2><%= blog.title %></h2>
-            <a href="/blogs/<%= blog._id %>"> <img src="<%= blog.image %>" ></a>
+            <a href="/blogs/<%= blog._id %>"> <img src="<%= blog.image %>" alt="photo"></a>
             <p>
             <span><strong><%= blog.created.toDateString() %></strong></span>
             </p>
